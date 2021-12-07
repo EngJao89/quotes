@@ -1,0 +1,32 @@
+<%= form_with(model: quote) do |form| %>
+  <% if quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+        <% quote.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.text_field :tags %>
+  </div>
+
+  <div class="field">
+    <%= form.label :conteudo %>
+    <%= form.text_area :conteudo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link_origem %>
+    <%= form.text_field :link_origem %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
